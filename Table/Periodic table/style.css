@@ -1,12 +1,14 @@
 table {
     width: 80%;
     border-collapse: collapse;
+    border: 1px solid #000 ;
+    text-align: center;
 }
 
 td {
     height: 70px;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     
 }
 .atomicNumber {
@@ -17,6 +19,7 @@ td {
 .abbrev {
     font-size: 25px;
     text-align: center;
+    font-weight: bold;
 }
 
 .completeName {
