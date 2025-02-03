@@ -1,0 +1,63 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+td {
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    
+}
+.atomicNumber {
+    font-size: 15px;
+    text-align: right
+}
+
+.abbrev {
+    font-size: 25px;
+    text-align: center;
+}
+
+.completeName {
+    font-size: 15px;
+    text-align: center;
+}
+
+
+
+.nobleGas {
+    background-color: rgba(255, 0, 0, 0.563);
+}
+
+.alkMetal {
+    background-color: rgba(0, 255, 255, 0.65);
+}
+
+.metAlkGr {
+    background-color: rgba(222, 79, 23, 0.676);
+}
+
+.nonMetal {
+    background-color: rgba(133, 56, 220, 0.64);
+}
+
+.halogen {
+    background-color: rgba(255, 2, 192, 0.657)
+}
+
+.metaloid {
+    background-color: rgba(0, 194, 0, 0.612);
+}
+
+.otherMetal {
+    background-color: rgba(255, 255, 0, 0.594);
+}
+
+.unknownEl {
+    background-color: rgba(128, 128, 128, 0.652);
+}
+
+.transitionMetal {
+    background-color: rgba(183, 255, 0, 0.632);
+}
