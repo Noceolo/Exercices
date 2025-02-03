@@ -3,33 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Periodic table</title>
 </head>
 <body>
-    <table border="1">
-        <tr>
-          <td>1 H Hydrogen</td>
-          <td colspan="17">&nbsp;</td>
-        </tr>
-        <tr>
-            <td>Li</td>
-        </tr>
-        <tr>
-            <td>Na</td>
-        </tr>
-        <tr>
-            <td>K</td>
-        </tr>
-        <tr>
-            <td>Rb</td>
-        </tr>
-        <tr>
-            <td>Cs</td>
-        </tr>
-        <tr>
-            <td>Fr</td>
-        </tr>
+    <div style="overflow-x: auto;">
+        <table border="1">
+            <tr>
+            <td class="nonMetal">
+                <div class="atomicNumber">1</div>
+                <div class="abbrev">H</div>
+                <div class="completeName">Hydrogen</div>
+            </td>
+            <td colspan="16">&nbsp;</td>
+            <td class="nobleGas">
+                <div class="atomicNumber">2</div>
+                <div class="abbrev">He</div>
+                <div class="completeName">Helium</div>
+            </td>
+            </tr>
+            <tr>
+                <td class="alkMetal">
+                    <div class="atomicNumber">3</div>
+                    <div class="abbrev">Li</div>
+                    <div class="completeName">Lithium</div>
+                </td>
+                <td class="metAlkGr">4 Be Berylium</td>
+                <td colspan="10">&nbsp;</td>
+                <td class="metaloid">5 B Bore</td>
+                <td class="nonMetal">6 C Carbon</td>
+                <td class="nonMetal">7 N Azote</td>
+                <td class="nonMetal">8 O Oxygen</td>
+                <td class="halogen">9 F Fluor</td>
+                <td class="nobleGas">10 Ne Neon</td>
+            </tr>
+            <tr>
+                <td class="alkMetal">11 Na Sodium</td>
+                <td class="metAlkGr">12 Mg Magnesium</td>
+                <td colspan="10">&nbsp;</td>
+                <td class="otherMetal">13 Al Aluminium</td>
+                <td class="metaloid">14 Si Silicon</td>
+                <td class="nonMetal">15 P Phosphorus</td>
+                <td class="nonMetal">16 S Sulfer</td>
+                <td class="halogen">17 Cl Chlorine</td>
+                <td class="nobleGas">18 Ar Argon</td>
+            </tr>
+            <tr>
+                <td class="alkMetal">19 K Potassium</td>
+                <td class="metAlkGr">20 Ca Calcium</td>
+                <td class="transitionMetal">21 Sc Scandium</td>
+                <td class="transitionMetal">22 Ti Titanium</td>
+                <td class="transitionMetal">23 V Vanadium</td>
+                <td class="transitionMetal">24 Cr Chromium</td>
+                <td class="transitionMetal">25 Mn Manganese</td>
+                <td class="transitionMetal">26 Fe Iron</td>
+                <td class="transitionMetal">27 Co Cobalt</td>
+                <td class="transitionMetal">28 Ni Nickel</td>
+                <td class="transitionMetal">29 Cu Copper</td>
+                <td class="transitionMetal">30 Zn Zinc</td>
+                <td class="otherMetal">31 Ga Gallium</td>
+                <td class="metaloid">32 Ge Germanium</td>
+                <td class="metaloid">33 As Arsenic</td>
+                <td class="nonMetal">34 Se Selenium</td>
+                <td class="halogen">35 Br Bromine</td>
+                <td class="nobleGas">36 Kr krypton</td>
+            </tr>
+            <tr>
+                <td class="alkMetal"> 37 Rb Rubidium</td>
+                <td class="metAlkGr">38 Sr Strontium</td>
+                <td class="transitionMetal">39 Y Yttrium</td>
+                <td class="transitionMetal">40 Zr Zirconium</td>
+                <td class="transitionMetal">41 Nb Niobium</td>
+                <td class="transitionMetal">42 Mo Molybdenum</td>
+                <td class="transitionMetal">43 Tc Technetium</td>
+                <td class="transitionMetal">44 Ru Ruthenium</td>
+                <td class="transitionMetal">45 Rh Rhodium</td>
+                <td class="transitionMetal">46 Pd Palladium</td>
+                <td class="transitionMetal">47 Ag Silver</td>
+                <td class="transitionMetal">48 Cd Cadmium</td>
+                <td class="otherMetal">49 In Indium</td>
+                <td class="otherMetal">50 Sn Tin</td>
+                <td class="metaloid">51 Tb Antimony</td>
+                <td class="metaloid">52 Te Tellerium</td>
+                <td class="halogen">53 I Iodine</td>
+                <td class="nobleGas">54 Xe Xenon</td>
+            </tr>
+            <tr>
+                <td class="alkMetal">55 Cs Caesium</td>
+                <td class="metAlkGr">56 Ba Barium</td>
+                <td class="transitionMetal">57 Lu lutetium</td>
+                <td class="transitionMetal">58 Hf Hafnium</td>
+                <td class="transitionMetal">73 Ta Tantalium</td>
+                <td class="transitionMetal">74 W Tungsten</td>
+                <td class="transitionMetal">75 Re Rhenium</td>
+                <td class="transitionMetal">76 Os Osmium</td>
+                <td class="transitionMetal">77 Ir Iridium</td>
+                <td class="transitionMetal">78 Pt Platinum</td>
+                <td class="transitionMetal">79 Au Gold</td>
+                <td class="transitionMetal">80 Hg Mercury</td>
+                <td class="otherMetal">81 Tl Thalium</td>
+                <td class="otherMetal">82 Pb Lead</td>
+                <td class="otherMetal">83 Bi Bismuth</td>
+                <td class="metaloid">84 Po Polonium</td>
+                <td class="halogen">85 At Astatine</td>
+                <td class="nobleGas">86 Rn Radon</td>
+            </tr>
+            <tr>
+                <td class="alkMetal">87 Fr Francium</td>
+                <td class="metAlkGr">88 Ra Radium</td>
+                <td class="transitionMetal">103 Lr Lawrencium</td>
+                <td class="transitionMetal">104 Rf Rutherfodium</td>
+                <td class="transitionMetal">105 Db Dubnium</td>
+                <td class="transitionMetal">106 Sg Seaborgium</td>
+                <td class="transitionMetal">107 Bh Bohrium</td>
+                <td class="transitionMetal">108 Hs Hassium</td>
+                <td class="transitionMetal">109 Mt Meitnerium</td>
+                <td class="transitionMetal">110 Ds Darmstadium</td>
+                <td class="transitionMetal">111 Rg Roertgenium</td>
+                <td class="transitionMetal">112 Cn Copernicium</td>
+                <td class="unknownEl">113 Nh Nihonium</td>
+                <td class="unknownEl">114 Fl Flerovium</td>
+                <td class="unknownEl">115 Mc Moscovium</td>
+                <td class="unknownEl">116 Lv Livermorium</td>
+                <td class="unknownEl">117 Ts Tennesse</td>
+                <td class="unknownEl">118 Og Oganessium</td>
+            </tr>
 
-      </table>
+        </table>
+    </div>
 </body>
 </html>
