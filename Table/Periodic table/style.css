@@ -9,7 +9,6 @@ td {
     height: 70px;
     margin: 0;
     padding: 10px;
-    
 }
 
 td.emptySpace {
@@ -31,40 +30,53 @@ td.emptySpace {
     text-align: center;
 }
 
-
-
-.nobleGas {
+.nobleGas, .nobleGasBtn {
     background-color: rgba(255, 0, 0, 0.563);
 }
 
-.alkMetal {
+.alkMetal, .alkaliMetalBtn {
     background-color: rgba(0, 255, 255, 0.65);
 }
 
-.metAlkGr {
+.metAlkGr, .alkalineMetalBtn {
     background-color: rgba(222, 79, 23, 0.676);
 }
 
-.nonMetal {
+.nonMetal, .nonMetalBtn {
     background-color: rgba(133, 56, 220, 0.64);
 }
 
-.halogen {
+.halogen, .halogensBtn {
     background-color: rgba(255, 2, 192, 0.657)
 }
 
-.metaloid {
+.metaloid, .metalloidsBtn {
     background-color: rgba(0, 194, 0, 0.612);
 }
 
-.otherMetal {
+.otherMetal, .otherMetalbtn {
     background-color: rgba(255, 255, 0, 0.594);
 }
 
-.unknownEl {
+.unknownEl, .unknownElBtn {
     background-color: rgba(128, 128, 128, 0.652);
 }
 
-.transitionMetal {
+.transitionMetal, .transitionMetalBtn {
     background-color: rgba(183, 255, 0, 0.632);
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px; ;
+    
+}
+
+button {
+    font-size: 1rem;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 4px;
 }
