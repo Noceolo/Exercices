@@ -11,19 +11,23 @@ td {
     padding: 10px;
     
 }
+
+td.emptySpace {
+    border: 0;
+}
 .atomicNumber {
-    font-size: 15px;
+    font-size: 1rem;
     text-align: right
 }
 
 .abbrev {
-    font-size: 25px;
+    font-size: 3rem;
     text-align: center;
     font-weight: bold;
 }
 
 .completeName {
-    font-size: 15px;
+    font-size: 1rem;
     text-align: center;
 }
 
