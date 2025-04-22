@@ -8,9 +8,32 @@
     <title>Eliott's Library</title>
 </head>
 <body>
-    <div class="title">Eliott's library</div>
+    <div class="title">Eliott's library &#128218;</div>
     <div class="container">
+        <div class="addBtnContainer" onclick="openForm()">
+            <button class="addbtn">Add a new book to your library</button>
+        </div>
+        <div class="bookContainer">
+            <div class="bookCard">I'm a book card</div>
+            <div class="bookCard">I'm a book card</div>
+            <div class="bookCard">I'm a book card</div>
+            <div class="bookCard">I'm a book card</div>
+            <div class="bookCard">I'm a book card</div>
+        </div>
+    </div>
+    <div class="formPopUp" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Wich book do we need to add</h1>
         
+            <label for="bookTitle"><b>Title</b></label>
+            <input type="text" placeholder="Book's title" name="bookTitle" required>
+        
+            <label for="bookAuthor"><b>Author</b></label>
+            <input type="text" placeholder="Book's author" name="bookAuthor" required>
+        
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
     </div>
 </body>
 </html>
