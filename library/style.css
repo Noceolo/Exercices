@@ -42,6 +42,7 @@ body{
 .bookContainer{
     display: grid;
     margin: 10px;
+    padding-top: 25px;
     width: 100vw;
     gap: 10px;
     grid-template-columns: repeat(5, 17%);
@@ -60,4 +61,25 @@ body{
     border-radius: 5px;
     background-color: rgb(254, 186, 102);
     padding: 10px;
+}
+
+
+.formPopUp{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 50%;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 45vh;
+    width: 30vw;
+    padding: 10px;
+}
+
+input[type=text]{
+    width: 50%;
+    
 }
