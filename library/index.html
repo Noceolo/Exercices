@@ -14,7 +14,10 @@
             <button class="addbtn">Add a new book to your library</button>
         </div>
         <div class="bookContainer">
-            <div class="bookCard">I'm a book card</div>
+            <div class="bookCard">
+                <div class="bookTitle">The Lord of the rings</div>
+                <div class="bookAuthor">JRR Tolkien</div>
+            </div>
             <div class="bookCard">I'm a book card</div>
             <div class="bookCard">I'm a book card</div>
             <div class="bookCard">I'm a book card</div>
@@ -22,14 +25,17 @@
         </div>
     </div>
     <div class="formPopUp" id="myForm">
-        <form action="/action_page.php" class="form-container">
+        <form action="/action_page.php" class="formContainer">
             <h1>Wich book do we need to add</h1>
         
-            <label for="bookTitle"><b>Title</b></label><br>
-            <input type="text" placeholder="Book's title" name="bookTitle" required><br>
+            <label for="bookTitleForm"><b>Title</b></label><br>
+            <input type="text" placeholder="Book's title" name="bookTitleForm" required><br>
         
-            <label for="bookAuthor"><b>Author</b></label><br>
-            <input type="text" placeholder="Book's author" name="bookAuthor" required><br><br>
+            <label for="bookAuthorForm"><b>Author</b></label><br>
+            <input type="text" placeholder="Book's author" name="bookAuthorForm" required><br>
+            
+            <label for="bookReadForm"><b>Status</b></label><br>
+            <input type="text" placeholder="Have you read it ?" name="bookReadForm" required><br>
         
             <button type="button" class="addBtn" onclick="addBook()">Add book</button>
             <button type="button" class="cancelBtn" onclick="closeForm()">Close</button>
