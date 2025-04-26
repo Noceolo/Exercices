@@ -18,7 +18,7 @@
 const myLibrary = [];
 
 const bookContainer = document.querySelector('.bookContainer');
-const bookTitleForm = document.querySelector('.bookTitleForm').value;
+const bookTitleForm = document.querySelector('.bookTitleForm');
 const bookAuthorForm = document.querySelector('.bookAuthorForm');
 const bookReadForm = document.querySelector('.bookReadForm');
 
@@ -49,9 +49,9 @@ function openForm() {
     document.getElementById("myForm").style.display = "none";
   }
 
-function addBook() {
-    const newBookTitle = bookTitleForm;
-    bookTitleForm.textContent = '';
+function addCardBook() {
+    const newBookTitle = bookTitleForm.value;
+    bookTitleForm.value = '';
 
     const newBookAuthor = bookAuthorForm.value;
     bookAuthorForm.value = '';
@@ -62,13 +62,13 @@ function addBook() {
     const bookCard = document.createElement('div');
     const bookTitle = document.createElement('div');
     const bookAuthor = document.createElement('div');
-    const bookRead = document;createElement('div');
+    const bookRead = document.createElement('div');
     bookCard.setAttribute('class', 'bookCard');
     bookTitle.setAttribute('class', 'bookTitle');
     bookAuthor.setAttribute('class', 'bookAuthor');
     bookRead.setAttribute('class', 'bookRead');
 
-    bookCard.appendChild(bookTitle, bookAuthor, bookRead);
+    bookCard.append(bookTitle, bookAuthor, bookRead);
     bookContainer.appendChild(bookCard);
 
     bookTitle.textContent = newBookTitle;
