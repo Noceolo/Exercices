@@ -17,6 +17,11 @@
 
 const myLibrary = [];
 
+const bookContainer = document.querySelector('bookContainer');
+const bookTitleForm = document.querySelector('bookTitleForm');
+const bookAuthorForm = document.querySelector('bookAuthorForm');
+const bookReadForm = document.querySelector('bookReadForm');
+
 function book(title, author, read){
     if(!new.target){
         throw Error("you need to use the new operator")
@@ -43,3 +48,20 @@ function openForm() {
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
+
+function addBook() {
+    const newBookTitle = bookTitleForm.value;
+    bookTitleForm.value = '';
+
+    const newBookAuthor = bookAuthorForm.value;
+    bookAuthorForm.value = '';
+
+    const newBookread = bookReadForm.value;
+    bookReadForm.value = '';
+
+    const bookCard = document.createElement('div');
+    const bookTitle = document.createElement('div');
+    const bookAuthor = document.createElement('div');
+    const bookread = document;createElement('div');
+    
+}
