@@ -25,14 +25,14 @@
         <form action="/action_page.php" class="form-container">
             <h1>Wich book do we need to add</h1>
         
-            <label for="bookTitle"><b>Title</b></label>
-            <input type="text" placeholder="Book's title" name="bookTitle" required>
+            <label for="bookTitle"><b>Title</b></label><br>
+            <input type="text" placeholder="Book's title" name="bookTitle" required><br>
         
-            <label for="bookAuthor"><b>Author</b></label>
-            <input type="text" placeholder="Book's author" name="bookAuthor" required>
+            <label for="bookAuthor"><b>Author</b></label><br>
+            <input type="text" placeholder="Book's author" name="bookAuthor" required><br><br>
         
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            <button type="button" class="addBtn" onclick="addBook()">Add book</button>
+            <button type="button" class="cancelBtn" onclick="closeForm()">Close</button>
           </form>
     </div>
 </body>
