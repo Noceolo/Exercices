@@ -22,7 +22,7 @@ const bookTitleForm = document.querySelector('.bookTitleForm');
 const bookAuthorForm = document.querySelector('.bookAuthorForm');
 const bookReadForm = document.querySelector('.bookReadForm');
 
-function book(title, author, read){
+function Book(title, author, read){
     if(!new.target){
         throw Error("you need to use the new operator")
     }else{
@@ -34,10 +34,9 @@ function book(title, author, read){
 };
 
 function addBook(title, author, read){
-    const Book = new book(title, author, read)
+    const book = new Book(title, author, read)
 
-    myLibrary.push(Book);
-    return Book;
+    myLibrary.push(book);
 };
 
 
@@ -59,21 +58,35 @@ function addCardBook() {
     const newBookread = bookReadForm.value;
     bookReadForm.value = '';
 
-    const bookCard = document.createElement('div');
-    const bookTitle = document.createElement('div');
-    const bookAuthor = document.createElement('div');
-    const bookRead = document.createElement('div');
-    bookCard.setAttribute('class', 'bookCard');
-    bookTitle.setAttribute('class', 'bookTitle');
-    bookAuthor.setAttribute('class', 'bookAuthor');
-    bookRead.setAttribute('class', 'bookRead');
+    addBook(newBookTitle, newBookAuthor, newBookread)
+};
 
-    bookCard.append(bookTitle, bookAuthor, bookRead);
-    bookContainer.appendChild(bookCard);
-
-    bookTitle.textContent = newBookTitle;
-    bookAuthor.textContent = newBookAuthor;
-    bookRead.textContent = newBookread;
+function libraryDisplay() {
+    
+    const oldBookCards = document.querySelectorAll(".bookCard");
+    oldBookCards.forEach(book => book.remove());
 
 
-}
+    myLibrary.forEach((item) => {
+        
+        const bookCard = document.createElement('div');
+        const bookTitle = document.createElement('div');
+        const bookAuthor = document.createElement('div');
+        const bookRead = document.createElement('div');
+
+        bookCard.setAttribute('class', 'bookCard');
+        bookTitle.setAttribute('class', 'bookTitle');
+        bookAuthor.setAttribute('class', 'bookAuthor');
+        bookRead.setAttribute('class', 'bookRead');
+
+        bookCard.append(bookTitle, bookAuthor, bookRead);
+        bookContainer.appendChild(bookCard);
+
+        bookTitle.textContent = item.title;
+        bookAuthor.textContent = item.author;
+        bookRead.textContent = item.read;
+    });
+};
+
+addBook("The lord of the ring", "JRR tolkien", "Not read");
+libraryDisplay();
