@@ -30,18 +30,32 @@ function addBook(title, author, read){
     myLibrary.push(book);
 };
 
+function removeBook(bookID){
+    const index = myLibrary.findIndex(book => book.bookID === bookID);
+    if (index !== -1) {
+        myLibrary.splice(index, 1);
+        libraryDisplay();
+    }
+}
+
 function createBookCard(item){
         const bookCard = document.createElement('div');
         const bookTitle = document.createElement('div');
         const bookAuthor = document.createElement('div');
         const bookRead = document.createElement('div');
+        const removeBtn = document.createElement('button');
+        const checkBtn = document.createElement
+        removeBtn.textContent ='Remove'
 
         bookCard.setAttribute('class', 'bookCard');
         bookTitle.setAttribute('class', 'bookTitle');
         bookAuthor.setAttribute('class', 'bookAuthor');
         bookRead.setAttribute('class', 'bookRead');
+        removeBtn.onclick = function() {
+            removeBook(item.bookID);
+        }
 
-        bookCard.append(bookTitle, bookAuthor, bookRead);
+        bookCard.append(bookTitle, bookAuthor, bookRead,removeBtn);
         bookContainer.appendChild(bookCard);
 
         bookTitle.textContent = item.title;
@@ -77,5 +91,3 @@ function handleFormSubmit() {
 };
 
 
-addBook("The lord of the ring", "JRR tolkien", "Not read");
-libraryDisplay();
