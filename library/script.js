@@ -42,20 +42,25 @@ function createBookCard(item){
         const bookCard = document.createElement('div');
         const bookTitle = document.createElement('div');
         const bookAuthor = document.createElement('div');
-        const bookRead = document.createElement('div');
+        const bookRead = document.createElement('input');
+        const label = document.createElement('label')
         const removeBtn = document.createElement('button');
-        const checkBtn = document.createElement
-        removeBtn.textContent ='Remove'
+
+        bookRead.type = 'checkbox';
+        label.name = 'readLabel';
+        label.htmlFor = 'readLabel';
+        label.textContent = 'Read';
+        removeBtn.textContent ='Remove';
 
         bookCard.setAttribute('class', 'bookCard');
         bookTitle.setAttribute('class', 'bookTitle');
         bookAuthor.setAttribute('class', 'bookAuthor');
-        bookRead.setAttribute('class', 'bookRead');
+    
         removeBtn.onclick = function() {
             removeBook(item.bookID);
         }
-
-        bookCard.append(bookTitle, bookAuthor, bookRead,removeBtn);
+        
+        bookCard.append(bookTitle, bookAuthor, bookRead, label, removeBtn);
         bookContainer.appendChild(bookCard);
 
         bookTitle.textContent = item.title;
@@ -90,4 +95,5 @@ function handleFormSubmit() {
     closeForm();
 };
 
-
+addBook('dune','herbert','read');
+libraryDisplay();
