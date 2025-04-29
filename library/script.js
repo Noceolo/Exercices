@@ -42,30 +42,41 @@ function createBookCard(item){
         const bookCard = document.createElement('div');
         const bookTitle = document.createElement('div');
         const bookAuthor = document.createElement('div');
-        const bookRead = document.createElement('input');
-        const label = document.createElement('label')
+        const bookRead = document.createElement('button');
         const removeBtn = document.createElement('button');
 
-        bookRead.type = 'checkbox';
-        label.name = 'readLabel';
-        label.htmlFor = 'readLabel';
-        label.textContent = 'Read';
-        removeBtn.textContent ='Remove';
+        
+        removeBtn.textContent = 'Remove';
 
         bookCard.setAttribute('class', 'bookCard');
         bookTitle.setAttribute('class', 'bookTitle');
         bookAuthor.setAttribute('class', 'bookAuthor');
-    
+        bookRead.setAttribute('class', 'bookRead')
+
+        if(item.read===false) {
+            bookRead.textContent = 'Not Read';
+            bookRead.style.backgroundColor = '#e04f63';
+        }else {
+            bookRead.textContent = 'Read';
+            bookRead.style.backgroundColor = '#63da63'
+        };
+
         removeBtn.onclick = function() {
             removeBook(item.bookID);
         }
         
-        bookCard.append(bookTitle, bookAuthor, bookRead, label, removeBtn);
+        bookRead.onclick = function() {
+            item.read = !item.read;
+            libraryDisplay();
+        };
+        
+        bookCard.append(bookTitle, bookAuthor, bookRead, removeBtn);
         bookContainer.appendChild(bookCard);
 
         bookTitle.textContent = item.title;
         bookAuthor.textContent = item.author;
-        bookRead.textContent = item.read;
+       // bookRead.textContent = item.read;
+       
 };
 
 function libraryDisplay() {
@@ -87,8 +98,8 @@ function handleFormSubmit() {
     const newBookAuthor = bookAuthorForm.value;
     bookAuthorForm.value = '';
 
-    const newBookRead = bookReadForm.value;
-    bookReadForm.value = '';
+    const newBookRead = bookReadForm.checked;
+    bookReadForm.checked = false;
 
     addBook(newBookTitle, newBookAuthor, newBookRead);
     libraryDisplay();
