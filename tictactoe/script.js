@@ -11,3 +11,16 @@ const GameBoard = (function() {
   })();
 
 
+function createPlayer(name, marker){
+    return { name, marker };
+};
+
+function checkFullBoard(){
+    GameBoard.getBoard()
+    let fullBoard = board.find(emptySpace);
+
+    function emptySpace(value, index, array){
+        return value === "";
+    };
+    
+};
