@@ -1,3 +1,7 @@
+function createPlayer(name, marker){
+    return { name, marker };
+};
+
 const GameBoard = (function() {
     const board = ["", "", "", "", "", "", "", "", ""];
   
@@ -11,16 +15,14 @@ const GameBoard = (function() {
   })();
 
 
-function createPlayer(name, marker){
-    return { name, marker };
-};
 
 function checkFullBoard(){
-    GameBoard.getBoard()
-    let fullBoard = board.find(emptySpace);
+    const boardState = GameBoard.getBoard()
+    const fullBoard = !boardState.some(cell => cell === "");
 
-    function emptySpace(value, index, array){
-        return value === "";
-    };
-    
+    if (fullBoard === true){
+        // futur win check fct
+        // display the tie message if no one wins and board is full
+    }
 };
+
