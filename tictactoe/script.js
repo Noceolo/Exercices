@@ -30,6 +30,7 @@ const GameBoard = (function() {
   function checkWinCon(){
     const boardState = GameBoard.getBoard();
     // win cons : same marker on 3 spaces in a row
+
     // array number : 012, 345, 678, 036, 147, 258, 246, 048
   };
   
@@ -57,19 +58,22 @@ const GameBoard = (function() {
       }else return false;
   };
 
-function placeMarker(playerChoice){
+function placeMarker(playerChoice, marker){
     // replace the array content by the player marker at the number he choses -1
     const boardState = GameBoard.getBoard();
-    boardState[playerChoice] = "X" // will be replaced by player.marker
+    boardState[playerChoice] = marker // will be replaced by player.marker
     console.log(boardState);
 
 
 }
 
 function playerTurn(player){
-    getPlayerChoice();
-    checkEmpty();
-    placeMarker();
+    const choice = getPlayerChoice();
+    if (choice === undefined) return;
+    if (checkEmpty(choice)){
+      placeMarker(choice,player.marker);
+    }else 
+    console.log("that space is already taken")
 }
 
 const GameController = (function() {
