@@ -39,8 +39,17 @@ function checkWinCon(){
 
 
 function getPlayerChoice(){
-    // getPlayer, know wich player is playing
-    // getPlayerChoice, get wich space he wants to fill, by number, remove 1 from it bc arrays starts at 0
+    let playerChoice = prompt("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9\n choose a space");
+      if(playerChoice === null || playerChoice === ""){
+        console.log("maybe another time then");
+      }else if(isNaN(playerChoice)){
+        console.log("You need to pick a number");
+
+      }else if (playerChoice <= 0 || playerChoice >= 10){
+        console.log("You need to pick a space between 1 and 9 buddy");
+      }else {
+        return playerChoice;
+      };
 };
 
 function placeMarker(){
@@ -64,3 +73,5 @@ const GameController = (function() {
 
 const player1 = createPlayer("Mark", "X");
 const player2 = createPlayer("Megan", "O");
+
+console.log("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9");
