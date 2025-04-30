@@ -30,7 +30,7 @@ const GameBoard = (function() {
   function checkWinCon(){
     const boardState = GameBoard.getBoard();
     // win cons : same marker on 3 spaces in a row
-
+    const winCons = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6], [0,4,8]];
     // array number : 012, 345, 678, 036, 147, 258, 246, 048
   };
   
@@ -50,7 +50,6 @@ const GameBoard = (function() {
   };
 
   function checkEmpty(playerChoice){
-      // check if the value the player selected is empty in the array
       const boardState = GameBoard.getBoard();
 
       if (boardState[playerChoice] === ""){
@@ -59,9 +58,8 @@ const GameBoard = (function() {
   };
 
 function placeMarker(playerChoice, marker){
-    // replace the array content by the player marker at the number he choses -1
     const boardState = GameBoard.getBoard();
-    boardState[playerChoice] = marker // will be replaced by player.marker
+    boardState[playerChoice] = marker
     console.log(boardState);
 
 
