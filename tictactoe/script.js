@@ -15,45 +15,55 @@ const GameBoard = (function() {
   })();
 
 
-function checkEmpty(){
-    // check if the value the player selected is empty in the array
-    // if empty, place the player.marker in the spot, if not empty, ask the player to chose another spot
-};
-
-function checkFullBoard(){
+  
+  function checkFullBoard(){
     const boardState = GameBoard.getBoard();
     const fullBoard = !boardState.some(cell => cell === "");
-
+    
     if (fullBoard === true){
-        // display the tie message if no one wins and board is full
+      // display the tie message if no one wins and board is full
     };
-};
-
-
-
-function checkWinCon(){
+  };
+  
+  
+  
+  function checkWinCon(){
     const boardState = GameBoard.getBoard();
     // win cons : same marker on 3 spaces in a row
     // array number : 012, 345, 678, 036, 147, 258, 246, 048
-};
-
-
-function getPlayerChoice(){
+  };
+  
+  
+  function getPlayerChoice(){
     let playerChoice = prompt("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9\n choose a space");
-      if(playerChoice === null || playerChoice === ""){
-        console.log("maybe another time then");
-      }else if(isNaN(playerChoice)){
-        console.log("You need to pick a number");
+    if(playerChoice === null || playerChoice === ""){
+      console.log("maybe another time then");
+    }else if(isNaN(playerChoice)){
+      console.log("You need to pick a number");
+      
+    }else if (playerChoice <= 0 || playerChoice >= 10){
+      console.log("You need to pick a space between 1 and 9 buddy");
+    }else {
+      return playerChoice = playerChoice - 1;
+    };
+  };
 
-      }else if (playerChoice <= 0 || playerChoice >= 10){
-        console.log("You need to pick a space between 1 and 9 buddy");
-      }else {
-        return playerChoice;
-      };
-};
+  function checkEmpty(playerChoice){
+      // check if the value the player selected is empty in the array
+      const boardState = GameBoard.getBoard();
 
-function placeMarker(){
+      if (boardState[playerChoice] === ""){
+        return true;
+      }else return false;
+  };
+
+function placeMarker(playerChoice){
     // replace the array content by the player marker at the number he choses -1
+    const boardState = GameBoard.getBoard();
+    boardState[playerChoice] = "X" // will be replaced by player.marker
+    console.log(boardState);
+
+
 }
 
 function playerTurn(player){
