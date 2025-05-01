@@ -21,7 +21,7 @@ const GameController = (function() {
     // i'm still confused about IIFE
     const player1 = createPlayer("Mark", "X");
     const player2 = createPlayer("Megan", "O");
-    const getBoard = GameBoard.getBoard();
+    const boardState = GameBoard.getBoard();
     let activePlayer = player1;
 
     function playTurn(player){
@@ -35,15 +35,12 @@ const GameController = (function() {
     };
 
     function checkEmpty(playerChoice){
-      const boardState = GameBoard.getBoard();
-
       if (boardState[playerChoice] === ""){
         return true;
       }else return false;
     };
 
     function placeMarker(playerChoice, marker){
-      const boardState = GameBoard.getBoard();
       boardState[playerChoice] = marker
       console.log(boardState);
     };
@@ -71,7 +68,6 @@ const GameController = (function() {
     };
 
     function checkFullBoard(){
-      const boardState = GameBoard.getBoard();
       const fullBoard = !boardState.some(cell => cell === "");
       
       if (fullBoard === true){
@@ -80,7 +76,6 @@ const GameController = (function() {
     };
     
     function checkWinCon(){
-      const boardState = GameBoard.getBoard();
       const winCons = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6], [0,4,8]];
   
       for (let combo of winCons){
