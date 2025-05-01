@@ -14,9 +14,11 @@ const GameBoard = (function() {
     };
   })();
 
- //maybe have the const boardState = GameBoard.getBoard(); as a global const because used everywhere
 
- //time to put everything inside GameController
+ //still need to build :
+ // resetBoard 
+ // score keeper
+ // updating the display
 const GameController = (function() {
     // i'm still confused about IIFE
     const player1 = createPlayer("Mark", "X");
