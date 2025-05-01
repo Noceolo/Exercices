@@ -29,9 +29,7 @@ const GameBoard = (function() {
   
   function checkWinCon(){
     const boardState = GameBoard.getBoard();
-    // win cons : same marker on 3 spaces in a row
     const winCons = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6], [0,4,8]];
-    // compare the board array with  this arrays (.this or .some)
 
     for (let combo of winCons){
       
@@ -42,9 +40,7 @@ const GameBoard = (function() {
           return true;
       };
     };
-
-    
-  };
+  
   
   
   function getPlayerChoice(){
