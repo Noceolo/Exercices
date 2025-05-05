@@ -26,27 +26,22 @@ const GameController = (function() {
     const boardState = GameBoard.getBoard();
     let activePlayer = player1;
 
-    function playTurn(player){
-      const choice = getPlayerChoice();
-      if (choice === undefined) return;
-      if (checkEmpty(choice)){
-        placeMarker(choice,player.marker);
-      }else 
-      console.log("that space is already taken")
-      playTurn(player);
-    };
 
+    
+    
     function checkEmpty(playerChoice){
       if (boardState[playerChoice] === ""){
         return true;
       }else return false;
     };
-
+    
+    
     function placeMarker(playerChoice, marker){
       boardState[playerChoice] = marker
       console.log(boardState);
     };
-
+    
+    
     function getPlayerChoice(){
       let playerChoice = prompt("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9\n choose a space");
       if(playerChoice === null || playerChoice === ""){
@@ -60,7 +55,7 @@ const GameController = (function() {
         return playerChoice = playerChoice - 1;
       };
     };
-  
+    
     function switchPlayer(){
       if (activePlayer === player1){
         activePlayer = player2
@@ -68,7 +63,7 @@ const GameController = (function() {
         activePlayer = player1
       };
     };
-
+    
     function checkFullBoard(){
       const fullBoard = !boardState.some(cell => cell === "");
       
@@ -79,18 +74,28 @@ const GameController = (function() {
     
     function checkWinCon(){
       const winCons = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6], [0,4,8]];
-  
+      
       for (let combo of winCons){
         
-          const first = combo[0]
-          const second = combo[1]
-          const third = combo[2]
-          if (boardState[first] === boardState[second] && boardState[second] === boardState[third] && boardState[first] !== "")
-            return true;
-        };
+        const first = combo[0]
+        const second = combo[1]
+        const third = combo[2]
+        if (boardState[first] === boardState[second] && boardState[second] === boardState[third] && boardState[first] !== "")
+          return true;
       };
-    function gameLoop(){
-      playTurn(activePlayer);
+    };
+    
+    function playTurn(){
+      const choice = getPlayerChoice();
+      if (choice === undefined) return;
+      if (checkEmpty(choice)){
+        placeMarker(choice,activePlayer.marker);
+      }else {
+      console.log("that space is already taken")
+      playTurn();
+      return;
+      }
+
       if (checkWinCon()){
         console.log(`${activePlayer.name} wins !`);
         return;
@@ -102,12 +107,18 @@ const GameController = (function() {
       };
 
       switchPlayer();
-      gameLoop();
+      playTurn();
     };
-    gameLoop();
-    
-})
+    function StartGame(){
+      console.log("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9");
+      playTurn();
+    }
+    return { StartGame };
+})();
+
+window.addEventListener("DOMContentLoaded", () => {
+  GameController.StartGame();
+});
 
 
 
-console.log("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9");
