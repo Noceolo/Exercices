@@ -62,7 +62,7 @@ const GameController = (function() {
     };
   
     function switchPlayer(){
-      if (activePlayer = player1){
+      if (activePlayer === player1){
         activePlayer = player2
       }else {
         activePlayer = player1
@@ -91,11 +91,21 @@ const GameController = (function() {
       };
     function gameLoop(){
       playTurn(activePlayer);
-      checkWinCon(); // if checkWinCon returns true, display active player as winner and stop the game loop
-      checkFullBoard(); // if checkfull board returns true, display the tie, and start a new game
+      if (checkWinCon()){
+        console.log(`${activePlayer.name} wins !`);
+        return;
+      }
+
+      if (checkFullBoard()){
+        console.log("It's a tie");
+        return
+      };
+
       switchPlayer();
+      gameLoop();
     };
     gameLoop();
+    
 })
 
 
