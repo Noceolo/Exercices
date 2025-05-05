@@ -1,5 +1,5 @@
-function createPlayer(name, marker){
-    return { name, marker };
+function createPlayer(name, marker, score){
+    return { name, marker, score };
 };
 
 const GameBoard = (function() {
@@ -17,12 +17,18 @@ const GameBoard = (function() {
 
  //still need to build :
  // resetBoard 
+
+ function resetBoard(){
+    boardState.fill("");
+ }
  // score keeper
+
+
  // updating the display
 const GameController = (function() {
     // i'm still confused about IIFE
-    const player1 = createPlayer("Mark", "X");
-    const player2 = createPlayer("Megan", "O");
+    const player1 = createPlayer("Mark", "X", 0);
+    const player2 = createPlayer("Megan", "O", 0);
     const boardState = GameBoard.getBoard();
     let activePlayer = player1;
 
@@ -98,6 +104,8 @@ const GameController = (function() {
 
       if (checkWinCon()){
         console.log(`${activePlayer.name} wins !`);
+        activePlayer.score += 1
+        console.log(`${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
         return;
       }
 
