@@ -91,12 +91,7 @@ const GameController = (function() {
       };
     };
 
-    function checkWinner(player){
-      if (player.score === 3){
-        console.log(`${activePlayer.name} wins the game !`)
-        return
-      };
-    };
+
     
     function playTurn(){
       const choice = getPlayerChoice();
@@ -110,15 +105,17 @@ const GameController = (function() {
       }
 
       if (checkWinCon()){
-        console.log(`${activePlayer.name} wins this round !`);
         activePlayer.score += 1
+        if (activePlayer.score >= 3){
+          console.log(`${activePlayer.name} wins the game !`,
+                      `${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
+          resetBoard();
+          return
+        }else
+        console.log(`${activePlayer.name} wins this round !`);
         resetBoard();
         console.log(`${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
         return;
-      };
-
-      if (checkWinner(activePlayer)){
-        console.log(`${activePlayer.name} wins the game !`);
       };
 
       if (checkFullBoard()){
