@@ -18,9 +18,7 @@ const GameBoard = (function() {
  //still need to build :
  // resetBoard 
 
- function resetBoard(){
-    boardState.fill("");
- }
+ 
  // score keeper
 
 
@@ -33,7 +31,9 @@ const GameController = (function() {
     let activePlayer = player1;
 
 
-    
+    function resetBoard(){
+      boardState.fill("");
+   }
     
     function checkEmpty(playerChoice){
       if (boardState[playerChoice] === ""){
@@ -105,18 +105,21 @@ const GameController = (function() {
       if (checkWinCon()){
         console.log(`${activePlayer.name} wins !`);
         activePlayer.score += 1
+        resetBoard();
         console.log(`${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
         return;
       }
 
       if (checkFullBoard()){
         console.log("It's a tie");
+        resetBoard();
         return
       };
 
       switchPlayer();
       playTurn();
     };
+
     function StartGame(){
       console.log("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9");
       playTurn();
@@ -124,9 +127,7 @@ const GameController = (function() {
     return { StartGame };
 })();
 
-window.addEventListener("DOMContentLoaded", () => {
-  GameController.StartGame();
-});
+
 
 
 
