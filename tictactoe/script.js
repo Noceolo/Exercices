@@ -16,10 +16,11 @@ const GameBoard = (function() {
 
 
  //still need to build :
+ // all the display part
+ // console game is working now
+ // maybe choosing who starts first ? 
  
-
- 
- // score keeper
+// winning score is defined at 3, could be good to have the option of how many games we want to play
 
 
  // updating the display
