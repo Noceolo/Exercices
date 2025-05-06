@@ -1,6 +1,8 @@
 body{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .boardContainer{
@@ -8,9 +10,13 @@ body{
     gap: 5px;
     border: solid 1px gray;
     background-color: blueviolet;
-    grid-template-columns: 20vh 20vh 20vh;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
 }
 
 .boardSpace{
     background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
