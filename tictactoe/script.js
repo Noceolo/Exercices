@@ -17,15 +17,19 @@ const GameBoard = (function() {
 
  //still need to build :
  // all the display part
- // console game is working now
- // maybe choosing who starts first ? 
- 
-// winning score is defined at 3, could be good to have the option of how many games we want to play
-
-
  // updating the display
 
- 
+function updateBoard(){
+  //make the text content of the grid correspond to the array elements
+};
+
+function displayBoard(event){
+  //quand on clique sur une case, remplacer le texte de cette case par le marker du joueur actif 
+  console.log(event.target)
+}
+
+
+
 const GameController = (function() {
     // i'm still confused about IIFE
     const player1 = createPlayer("Mark", "X", 0);
@@ -50,7 +54,8 @@ const GameController = (function() {
       console.log(boardState);
     };
     
-    
+    // change this into a click instead of a prompt, take the grid space index and store it
+
     function getPlayerChoice(){
       let playerChoice = prompt("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9\n choose a space");
       if(playerChoice === null || playerChoice === ""){
@@ -64,6 +69,7 @@ const GameController = (function() {
         return playerChoice = playerChoice - 1;
       };
     };
+
     
     function switchPlayer(){
       if (activePlayer === player1){
