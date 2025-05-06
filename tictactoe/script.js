@@ -24,6 +24,8 @@ const GameBoard = (function() {
 
 
  // updating the display
+
+ 
 const GameController = (function() {
     // i'm still confused about IIFE
     const player1 = createPlayer("Mark", "X", 0);
