@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.boardContainer{
+    display: grid;
+    gap: 5px;
+    border: solid 1px gray;
+    background-color: blueviolet;
+    grid-template-columns: 20vh 20vh 20vh;
+}
+
+.boardSpace{
+    background-color: aqua;
+}
