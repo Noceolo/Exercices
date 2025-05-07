@@ -15,21 +15,22 @@ const GameBoard = (function() {
   })();
 
 
- //still need to build :
- // all the display part
- // updating the display
-
-function updateBoard(){
-  
-};
-
-
 
 
 const GameController = (function() {
-  // i'm still confused about IIFE
-  const player1 = createPlayer("Mark", "X", 0);
-  const player2 = createPlayer("Megan", "O", 0);
+  
+
+  function playerCreation(){
+    
+    let playerName1 = document.getElementById("playerInput1").value;
+    let playerName2 = document.getElementById("playerInput2").value;
+    
+    return playerName1, playerName2;
+  }
+  
+
+  const player1 = createPlayer(playerName1, "X", 0);
+  const player2 = createPlayer(playerName2, "O", 0);
 
   const boardState = GameBoard.getBoard();
 

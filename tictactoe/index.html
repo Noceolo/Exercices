@@ -10,9 +10,12 @@
 <body>
     <div class="title">
         <p>Tic Tac Toe</p>
-        <button onclick="GameController.StartGame();">start a game ?</button>
     </div>
     <div class="playersContainer">
+        <p class="nameQuestion">who's playing ?</p>
+        <input type="text" name="player1" id="playerInput1">
+        <input type="text" name="player2" id="playerInput2">
+        <button class="nameRegister" onclick="playerCreation()">Let's Play</button>
     </div>
     <div class="boardContainer">
         <div class="boardSpace" data-index="0"></div>
