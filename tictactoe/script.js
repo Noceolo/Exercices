@@ -135,43 +135,6 @@ const GameController = (function() {
       };
     };
 
-
-    
-    function playTurn(){
-      const choice = getPlayerChoice();
-      if (choice === undefined) return;
-      if (checkEmpty(choice)){
-        placeMarker(choice,activePlayer.marker);
-      }else {
-      console.log("that space is already taken")
-      playTurn();
-      return;
-      }
-
-      if (checkWinCon()){
-        activePlayer.score += 1
-        if (activePlayer.score >= 3){
-          console.log(`${activePlayer.name} wins the game !`,
-                      `${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
-          resetBoard();
-          return
-        }else
-        console.log(`${activePlayer.name} wins this round !`);
-        resetBoard();
-        console.log(`${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
-        return;
-      };
-
-      if (checkFullBoard()){
-        console.log("It's a tie");
-        resetBoard();
-        return
-      };
-
-      switchPlayer();
-      playTurn();
-    };
-
     function StartGame(){
       console.log("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9");
       playTurn();
