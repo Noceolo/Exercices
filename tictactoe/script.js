@@ -23,26 +23,35 @@ function updateBoard(){
   
 };
 
-function getEventTarget(event){
-  const index = event.currentTarget.dataset.index;
-  console.log(index);
-  return index;
-};
-
-const gameCell = document.querySelectorAll('div.boardSpace');
-gameCell.forEach((cell) => {
-  cell.addEventListener('click', getEventTarget);
-});
 
 
 
 const GameController = (function() {
-    // i'm still confused about IIFE
-    const player1 = createPlayer("Mark", "X", 0);
-    const player2 = createPlayer("Megan", "O", 0);
-    const boardState = GameBoard.getBoard();
-    let activePlayer = player1;
+  // i'm still confused about IIFE
+  const player1 = createPlayer("Mark", "X", 0);
+  const player2 = createPlayer("Megan", "O", 0);
 
+  const boardState = GameBoard.getBoard();
+
+  const gameCell = document.querySelectorAll('div.boardSpace');
+  gameCell.forEach((cell) => {
+    cell.addEventListener('click', getEventTarget);
+  });
+  let activePlayer = player1;
+  
+  
+  function getEventTarget(event){
+    const cell = event.currentTarget
+    const index = cell.dataset.index
+
+    console.log(index);
+
+    if (checkEmpty(index)){
+      placeMarker(index, activePlayer.marker);
+
+      cell.textContent = activePlayer.marker;
+    }
+  };
 
     function resetBoard(){
       boardState.fill("");
