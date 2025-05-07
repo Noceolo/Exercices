@@ -50,13 +50,49 @@ const GameController = (function() {
       placeMarker(index, activePlayer.marker);
 
       cell.textContent = activePlayer.marker;
-    }
+    }else {
+      alert('This space is already taken');
+    };
+
+    if (checkWinCon()){
+      activePlayer.score += 1
+      if (activePlayer.score >= 3){
+        console.log(`${activePlayer.name} wins the game !`,
+                    `${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
+        resetBoardDisplay()
+        return
+      }else
+      console.log(`${activePlayer.name} wins this round !`);
+      resetBoardDisplay()
+      console.log(`${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
+      return;
+    };
+
+    if (checkFullBoard()){
+      console.log("It's a tie");
+      resetBoardDisplay()
+      return
+    };
+
+    switchPlayer();
+    
+
   };
 
     function resetBoard(){
       boardState.fill("");
    }
     
+
+   function resetBoardDisplay() {
+    resetBoard(); // This resets your boardState array
+    
+    // Reset all cell displays
+    const gameCells = document.querySelectorAll('div.boardSpace');
+    gameCells.forEach(cell => {
+      cell.textContent = '';
+    });
+  }
     function checkEmpty(playerChoice){
       if (boardState[playerChoice] === ""){
         return true;
