@@ -104,23 +104,7 @@ const GameController = (function() {
       boardState[playerChoice] = marker
       console.log(boardState);
     };
-    
-    // change this into a click instead of a prompt, take the grid space index and store it
-
-    function getPlayerChoice(){
-      let playerChoice = prompt("1 | 2 | 3 \n4 | 5 | 6\n7 | 8 | 9\n choose a space");
-      if(playerChoice === null || playerChoice === ""){
-        console.log("maybe another time then");
-      }else if(isNaN(playerChoice)){
-        console.log("You need to pick a number");
-        
-      }else if (playerChoice <= 0 || playerChoice >= 10){
-        console.log("You need to pick a space between 1 and 9 buddy");
-      }else {
-        return playerChoice = playerChoice - 1;
-      };
-    };
-
+  
     
     function switchPlayer(){
       if (activePlayer === player1){
