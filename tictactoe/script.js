@@ -20,13 +20,19 @@ const GameBoard = (function() {
  // updating the display
 
 function updateBoard(){
-  //make the text content of the grid correspond to the array elements
+  
 };
 
-function displayBoard(event){
-  //quand on clique sur une case, remplacer le texte de cette case par le marker du joueur actif 
-  console.log(event.target)
-}
+function getEventTarget(event){
+  const index = event.currentTarget.dataset.index;
+  console.log(index);
+  return index;
+};
+
+const gameCell = document.querySelectorAll('div.boardSpace');
+gameCell.forEach((cell) => {
+  cell.addEventListener('click', getEventTarget);
+});
 
 
 
