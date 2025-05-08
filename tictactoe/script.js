@@ -19,18 +19,19 @@ const GameBoard = (function() {
 
 const GameController = (function() {
   
-
-  function playerCreation(){
-    
+  function createPlayers() {
     let playerName1 = document.getElementById("playerInput1").value;
     let playerName2 = document.getElementById("playerInput2").value;
     
-    return playerName1, playerName2;
-  }
+    const player1 = createPlayer(playerName1 || "Player 1", "X", 0); // Default name if empty
+    const player2 = createPlayer(playerName2 || "Player 2", "O", 0);
+    
+    return { player1, player2 };
+  };
   
-
-  const player1 = createPlayer(playerName1, "X", 0);
-  const player2 = createPlayer(playerName2, "O", 0);
+  
+  const { player1, player2 } = createPlayers();
+    
 
   const boardState = GameBoard.getBoard();
 
@@ -111,14 +112,14 @@ const GameController = (function() {
     if (checkWinCon()){
       activePlayer.score += 1
       if (activePlayer.score >= 3){
-        console.log(`${activePlayer.name} wins the game !`,
+        alert(`${activePlayer.name} wins the game !`,
                     `${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
         resetBoardDisplay()
         return
       }else
-      console.log(`${activePlayer.name} wins this round !`);
+      alert(`${activePlayer.name} wins this round !`);
       resetBoardDisplay()
-      console.log(`${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
+      alert(`${player1.name} :` , player1.score ,"  vs " , `${player2.name} : `,player2.score);
       return;
     };
   
