@@ -23,7 +23,8 @@ function closeForm() {
 //         this.read = read;
 //         this.bookID = crypto.randomUUID();
 //     };
-// };
+// };npm install --save-dev webpack webpack-cli
+
 
 // needs to transform the Book into a class 
 
