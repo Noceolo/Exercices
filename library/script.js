@@ -14,16 +14,27 @@ function closeForm() {
   };
 
 
-function Book(title, author, read){
-    if(!new.target){
-        throw Error("you need to use the new operator")
-    }else{
+// function Book(title, author, read){
+//     if(!new.target){
+//         throw Error("you need to use the new operator")
+//     }else{
+//         this.title = title;
+//         this.author = author;
+//         this.read = read;
+//         this.bookID = crypto.randomUUID();
+//     };
+// };
+
+// needs to transform the Book into a class 
+
+class Book {
+    constructor(title, author, read){
         this.title = title;
         this.author = author;
         this.read = read;
         this.bookID = crypto.randomUUID();
-    };
-};
+    }
+}
 
 function addBook(title, author, read){
     const book = new Book(title, author, read)
