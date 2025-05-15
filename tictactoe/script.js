@@ -39,8 +39,7 @@ const GameController = (function () {
 
 
   function init(){
-       //initialize the game
-       //set up events listener at gameCells, resetButton and PlayerForm
+       
       gameCells.forEach((cell) => {
           cell.addEventListener('click', getEventTarget);
         });
@@ -58,13 +57,13 @@ const GameController = (function () {
   };
 
   function playerCreation(){
-      // Player creation from form inputs
+      
       let playerName1 = document.getElementById("playerInput1").value;
       let playerName2 = document.getElementById("playerInput2").value;
   
-      player1 = createPlayer(playerName1 || "Player 1", "X", 0); // Default name if empty
+      player1 = createPlayer(playerName1 || "Player 1", "X", 0); 
       player2 = createPlayer(playerName2 || "Player 2", "O", 0);
-      //start the game
+      
       startGame();
   }
 
@@ -86,13 +85,13 @@ const GameController = (function () {
       const index = cell.dataset.index;
       
       if (checkEmpty(index)) {
-        // Update model
+        
         placeMarker(index, activePlayer.marker);
         
-        // Update view
+        
         updateCellDisplay(cell, activePlayer.marker);
         
-        // Check game state
+       
         if (checkWinCon()) {
           handleWin();
         } else if (checkFullBoard()) {
@@ -173,11 +172,7 @@ const GameController = (function () {
           cell.classList.remove('x-marker', 'o-marker');
       });
 
-      // if (player1 && player2) {
-      //     gameActive = true;
-      //     activePlayer = player1;
-      //     updateMessageDisplay(`${activePlayer.name}'s turn (${activePlayer.marker})`);
-      //   };
+      
   };
 
   function updateMessageDisplay(message){
